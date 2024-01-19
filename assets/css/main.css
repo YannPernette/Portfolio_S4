@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+
+    html {
+        @apply text-blanc bg-sombre font-openSans;
+        height: 100vh;
+        /* overflow: hidden; */
+    }
+
+    /* PERSONALISED CURSOR */
+
+    body {
+        /* cursor: none; */
+        perspective: 1px;
+        transform-style: preserve-3d;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    a {
+        cursor: none;
+    }
+
+    .cursor-dot {
+        width: 5px;
+        height: 5px;
+        background-color: white;
+    }
+
+    .cursor-outline {
+        width: 30px;
+        height: 30px;
+        border: 2px solid hsla(0, 0%, 100%, 0.5);
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 100;
+        pointer-events: none;
+    }
+
+
+    /* MASK IMAGE */
+
+
+    #hero {
+        height: 100vh;
+        position: relative;
+        margin-bottom: -5%;
+    }
+
+    .layer-3 {
+        background-image: url("img/mountains_home.svg");
+        background-position: 50% bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        z-index: 100;
+        pointer-events: none;
+    }
+
+
+
+    /* UNDERLINE ANIMATION */
+
+    .underlineAnimation {
+        position: relative;
+    }
+
+    .underlineAnimation::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 1px;
+        background-color: #FFFFFF;
+        transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .underlineAnimation:hover::before {
+            left: 0;
+            right: auto;
+            width: 100%;
+        }
+    }
+
+
+    /* BORDER ANIMATION */
+
+    .borderAnimation {
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .borderAnimation::before,
+    .borderAnimation::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid #FFFFFF;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        pointer-events: none;
+    }
+
+    .borderAnimation::after {
+        transform-origin: right;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+
+    .borderAnimation:hover::before,
+    .borderAnimation:hover::after {
+        transform: scaleX(1);
+    }
+
+
+
+
+
+
+    #particles-js,
+    #parallax,
+    .layer,
+    .some-space,
+    .some-more-space {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+
+    #particles-js {
+        opacity: 0.6;
+    }
+
+    .titreParallax {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .sousTitreParallax {
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .boutonParallax {
+        font-size: 18px;
+        border: 1px solid white;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        letter-spacing: 0.05em;
+        transform: translate3d(-50%, -50%, 0);
+        text-decoration: none;
+        transition: color 400ms;
+        padding: 10px 15px;
+    }
+
+    .boutonParallax::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: inline-block;
+        background-color: #FFFFFF;
+        transform: scaleX(0);
+        transform-origin: right;
+        z-index: -1;
+        transition: transform 400ms;
+    }
+
+    .boutonParallax:hover {
+        color: #000000;
+    }
+
+    .boutonParallax:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+
+    .boutonNormal {
+        border: 1px solid #9ED0FF;
+        color: #9ED0FF;
+        letter-spacing: 0.05em;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        text-decoration: none;
+        transition: color 400ms;
+        padding: 20px 40px;
+        text-transform: uppercase;
+        pointer-events: auto;
+    }
+
+    .boutonNormal::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: inline-block;
+        background-color: #9ED0FF;
+        transform: scaleX(0);
+        transform-origin: right;
+        z-index: -1;
+        transition: transform 400ms;
+    }
+
+    .boutonNormal:hover {
+        color: #000000;
+    }
+
+    .boutonNormal:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+
+
+    #parallax {
+        pointer-events: none;
+        top: -25vh;
+        height: 65vh;
+        /* Taille du composant Parallax, globalement des particules  */
+    }
+
+    #parallax .boutonParallax {
+        pointer-events: auto;
+    }
+
+    .some-space {
+        animation: rotate 18s 0.5s infinite linear reverse;
+    }
+
+    .some-more-space {
+        -webkit-animation: rotate 15s 0.1s infinite linear;
+        animation: rotate 15s 0.1s infinite linear;
+    }
+
+    @-webkit-keyframes rotate {
+        0% {
+            transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+        }
+    }
+
+
+    .bgFooter {
+        background-image: url("img/background-footer.svg");
+        background-position: bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .bgCompetences {
+        position: relative;
+        background-image: url("img/clavier_bg.webp");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .bgCompetences::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(158, 208, 255, 0.8);
+        /* Adjust the last value to change the opacity */
+    }
+
+
+
+}
