@@ -1,3 +1,6 @@
+@import 'fonts.css';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,7 +63,7 @@
     }
 
     .layer-3 {
-        background-image: url("img/mountains_home.svg");
+        background-image: url("../img/mountains_home.svg");
         background-position: 50% bottom;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -278,7 +281,7 @@
 
 
     .bgFooter {
-        background-image: url("img/background-footer.svg");
+        background-image: url("../img/background-footer.svg");
         background-position: bottom;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -286,7 +289,7 @@
 
     .bgCompetences {
         position: relative;
-        background-image: url("img/clavier_bg.webp");
+        background-image: url("../img/clavier_bg.webp");
         background-size: 100% auto;
         background-repeat: no-repeat;
     }

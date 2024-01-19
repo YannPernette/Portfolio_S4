@@ -23,7 +23,7 @@
             <div>
                 <ul class="flex">
                     <li class="borderAnimation">
-                        <nuxt-link to="/sffb">Mon CV</nuxt-link>
+                        <nuxt-link to="/">Mon CV</nuxt-link>
                     </li>
                 </ul>
             </div>
