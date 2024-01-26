@@ -11,7 +11,7 @@
 
     html {
         @apply text-blanc bg-sombre font-openSans;
-        height: 100vh;
+        /* height: 100vh; */
         /* overflow: hidden; */
     }
 
@@ -24,6 +24,60 @@
         overflow-x: hidden;
         overflow-y: scroll;
     }
+
+
+
+    .parallax {
+        pointer-events: none;
+    }
+
+    .fond-particles {
+        top: calc(50% - 40px);
+        left: calc(50% - 200px);
+    }
+
+    .texte {
+        top: calc(50% - 80px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne1 {
+        top: calc(50% + 290px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne2 {
+        top: calc(50% + 270px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne3 {
+        top: calc(50% + 250px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne4 {
+        top: calc(50% + 270px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne5 {
+        top: calc(50% + 210px);
+        left: calc(50% - 200px);
+    }
+
+    .montagne6 {
+        top: calc(50% + 180px);
+        left: calc(50% - 200px);
+    }
+
+
+
+
+
+
+
+
 
     a {
         cursor: none;
@@ -170,7 +224,7 @@
         font-size: 18px;
         border: 1px solid white;
         position: absolute;
-        top: 30%;
+        top: 70%;
         left: 50%;
         letter-spacing: 0.05em;
         transform: translate3d(-50%, -50%, 0);

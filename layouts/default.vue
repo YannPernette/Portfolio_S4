@@ -1,12 +1,12 @@
 
 
 <template>
-    <div>
+    <!-- <div class=""> -->
         <Header />
 
         <!-- Contenu de la page -->
         <slot /> 
 
-        <Footer />
-    </div>
+        <!-- <Footer /> -->
+    <!-- </div> -->
 </template>

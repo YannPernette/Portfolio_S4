@@ -1,7 +1,7 @@
 <template>
     <header class="flex justify-center">
 
-        <nav class="fixed py-10 flex gap-24 font-urbanist font-light uppercase text-lg bg-sombre">
+        <nav class="fixed z-50 py-10 flex gap-24 font-urbanist font-light uppercase text-lg">
 
             <div>
                 <ul class="flex gap-12">
