@@ -2,11 +2,12 @@
 
 <template>
     <!-- <div class=""> -->
-        <Header />
+    <CustomCursor />
+    <Header />
 
-        <!-- Contenu de la page -->
-        <slot /> 
+    <!-- Contenu de la page -->
+    <slot />
 
-        <!-- <Footer /> -->
+    <!-- <Footer /> -->
     <!-- </div> -->
 </template>

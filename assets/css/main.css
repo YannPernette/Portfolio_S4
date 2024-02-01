@@ -1,11 +1,9 @@
 @import 'fonts.css';
-
+@import 'customCursor.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 
 @layer base {
 
@@ -15,20 +13,11 @@
         /* overflow: hidden; */
     }
 
-    /* PERSONALISED CURSOR */
-
-    body {
-        /* cursor: none; */
-        perspective: 1px;
-        transform-style: preserve-3d;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
-
 
 
     .parallax {
         pointer-events: none;
+        transition: 0.45s cubic-bezier(.2, .49, .32, .99);
     }
 
     .fond-particles {
@@ -37,8 +26,8 @@
     }
 
     .texte {
-        top: calc(50% - 80px);
-        left: calc(50% - 200px);
+        top: 35%;
+        left: 40%;
     }
 
     .montagne1 {
@@ -69,41 +58,6 @@
     .montagne6 {
         top: calc(50% + 180px);
         left: calc(50% - 200px);
-    }
-
-
-
-
-
-
-
-
-
-    a {
-        cursor: none;
-    }
-
-    .cursor-dot {
-        width: 5px;
-        height: 5px;
-        background-color: white;
-    }
-
-    .cursor-outline {
-        width: 30px;
-        height: 30px;
-        border: 2px solid hsla(0, 0%, 100%, 0.5);
-    }
-
-    .cursor-dot,
-    .cursor-outline {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 100;
-        pointer-events: none;
     }
 
 
@@ -361,4 +315,66 @@
 
 
 
+}
+
+
+
+
+
+
+/* ANIMATION SURVOL PROJET */
+.hover-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-effect:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), 0px 0px 44px 12px rgba(57, 134, 184, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), 0px 0px 44px 12px rgba(57, 134, 184, 0.5);
+}
+
+.hover-effect::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9ED0FF;
+    transform: translateY(-100%);
+    transition: transform 0.3s cubic-bezier(.12, .66, .5, .85);
+}
+
+.hover-effect:hover::before {
+    transform: translateY(0);
+}
+
+
+/* SCROLL TEXTE EFFET (BANDEAU) */
+
+.scroll-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cursorProjet:hover .scroll-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll 5s linear infinite;
+}
+
+.scroll-container:hover .scroll-text {
+    animation-play-state: running;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }

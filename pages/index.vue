@@ -3,6 +3,8 @@
 
 
 <template>
+
+
     <div class="pb-32">
 
         <!-- <div id='hero'>
@@ -22,7 +24,7 @@
                 <ParallaxComposant />
             </div>
             <div data-speedx="0.16" data-speedy="0.25"
-                class="parallax texte absolute z-10 text-center uppercase leading-none">
+                class="parallax texte absolute z-10 text-center transform -translate-x-1/2 -translate-y-1/2 uppercase leading-none">
                 <h2 class="font-urbanist font-thin text-[5rem]">Yann</h2>
                 <h1 class="font-orbitron font-bold text-[5.5rem]">Pernette</h1>
             </div>
@@ -47,7 +49,7 @@
 
 
 
-        <div class="mx-44 mb-20">
+        <div class="mt-10 mx-44 mb-20">
             <h3 class="text-3xl font-urbanist font-bold mb-2">Bonjour, je suis Yann.</h3>
             <h4 class="text-xl font-semibold">Quelqu’un qui pense qu’un bon design ne peut pas exister sans un bon code.
             </h4>

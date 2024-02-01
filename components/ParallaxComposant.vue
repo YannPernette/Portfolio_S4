@@ -40,7 +40,7 @@ const onLoad = (container: Container) => {
 
 
 <template>
-    <div data-speedx="0.3" data-speedy="0.2" class="parallax absolute z-[9] fond-particles w-[125%] h-screen">
+    <div data-speedx="0.25" data-speedy="0.05" class="parallax absolute z-[9] fond-particles w-[125%] h-screen">
         <NuxtParticles id="tsparticles" :options="options" @load="onLoad"></NuxtParticles>
     </div>
 </template>
