@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    .splitGen:hover .opacitySplit {
+        opacity: 80%;
+    }
+
+    .boutonSplit {
+        border: 1px solid #FFFFFF;
+        color: #FFFFFF;
+        letter-spacing: 0.05em;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        text-decoration: none;
+        transition: color 400ms;
+        padding: 12px 60px;
+        text-transform: uppercase;
+        pointer-events: auto;
+    }
+
+    .boutonSplit::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: inline-block;
+        background-color: #FFFFFF;
+        transform: scaleX(0);
+        transform-origin: right;
+        z-index: -1;
+        transition: transform 400ms;
+    }
+
+    .boutonSplit:hover {
+        color: #000000;
+    }
+
+    .boutonSplit:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+}
