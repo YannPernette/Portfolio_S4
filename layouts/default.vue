@@ -3,7 +3,7 @@
 <template>
     <!-- <div class=""> -->
     <CustomCursor />
-    <!-- <Header /> -->
+    <Header />
 
     <!-- Contenu de la page -->
     <slot />
