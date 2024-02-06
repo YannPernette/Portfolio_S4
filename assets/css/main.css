@@ -2,6 +2,7 @@
 @import 'customCursor.css';
 @import 'splitProjets.css';
 @import 'boutonMenu.css';
+@import '404.css';
 
 @tailwind base;
 @tailwind components;
