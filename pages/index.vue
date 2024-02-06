@@ -21,7 +21,7 @@
         <div class="overflow-hidden h-[120vh] w-[125%] relative">
 
             <div>
-                <ParallaxComposant />
+                <!-- <ParallaxComposant /> -->
             </div>
             <div data-speedx="0.16" data-speedy="0.25"
                 class="parallax texte absolute z-10 text-center transform -translate-x-1/2 -translate-y-1/2 uppercase leading-none">
