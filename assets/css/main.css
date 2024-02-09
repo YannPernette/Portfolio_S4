@@ -395,27 +395,50 @@
 }
 
 
-.contourMenu {
-    color: #06041C;
-    letter-spacing: 0.5rem;
-    text-shadow: rgb(255, 255, 255) 3px 0px 0px, rgb(255, 255, 255) 2.83487px 0.981584px 0px, rgb(255, 255, 255) 2.35766px 1.85511px 0px, rgb(255, 255, 255) 1.62091px 2.52441px 0px, rgb(255, 255, 255) 0.705713px 2.91581px 0px, rgb(255, 255, 255) -0.287171px 2.98622px 0px, rgb(255, 255, 255) -1.24844px 2.72789px 0px, rgb(255, 255, 255) -2.07227px 2.16926px 0px, rgb(255, 255, 255) -2.66798px 1.37182px 0px, rgb(255, 255, 255) -2.96998px 0.42336px 0px, rgb(255, 255, 255) -2.94502px -0.571704px 0px, rgb(255, 255, 255) -2.59586px -1.50383px 0px, rgb(255, 255, 255) -1.96093px -2.27041px 0px, rgb(255, 255, 255) -1.11013px -2.78704px 0px, rgb(255, 255, 255) -0.137119px -2.99686px 0px, rgb(255, 255, 255) 0.850987px -2.87677px 0px, rgb(255, 255, 255) 1.74541px -2.43999px 0px, rgb(255, 255, 255) 2.44769px -1.73459px 0px, rgb(255, 255, 255) 2.88051px -0.838247px 0px;
-}
-
-.contourMenu:hover {
-    color: white;
-    text-shadow: none;
-}
-
-
-#menuItems:hover > .menuItem {
+#menuItems:hover>.menuItem {
     opacity: 0.4;
+    transition: opacity 800ms;
 }
 
-#menuItems:hover > .menuItem:hover {
+#menuItems:hover>.menuItem:hover {
     opacity: 1;
+    transition: opacity 800ms;
 }
 
 #menuBackgroundPattern {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(rgba(2255, 255, 255, 0.1) 9%,
+            transparent 9%);
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+
+    transition: opacity 800ms ease, all 800ms ease;
+}
+
+#menuItems:hover~#menuBackgroundPattern {
+    background-size: 10vmin 10vmin;
+    opacity: 0.5;
+}
+
+#menu[data-active-index="0"]>#menuBackgroundPattern {
+    background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"]>#menuBackgroundPattern {
+    background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"]>#menuBackgroundPattern {
+    background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"]>#menuBackgroundPattern {
+    background-position: 0% -100%;
 }

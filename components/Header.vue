@@ -20,7 +20,7 @@ const isMenuOpen = ref(false);
                 class="fixed fill-blanc opacity-10 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 size-[70%]" /> -->
 
             <nav>
-                <div class="h-screen flex items-center text-[3rem] font-electrolize uppercase pl-20">
+                <div id="menu" class="h-screen flex items-center text-[3rem] font-electrolize uppercase pl-20">
                     <ul id="menuItems" class="">
                         <li class="menuItem py-5">
                             <NuxtLink to="/">
