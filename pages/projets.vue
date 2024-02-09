@@ -46,7 +46,7 @@
     <div class="mt-20 mx-24 mb-96">
 
         <div class="grid grid-cols-2 grid-rows-2 gap-10">
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet">
+            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
                 <img class="border-solid border-2 border-bleu-medium mb-4"
                     src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
                 <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet">
+            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
                 <img class="border-solid border-2 border-bleu-medium mb-4"
                     src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
                 <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet">
+            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
                 <img class="border-solid border-2 border-bleu-medium mb-4"
                     src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
                 <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet">
+            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
                 <img class="border-solid border-2 border-bleu-medium mb-4"
                     src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
                 <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">

@@ -442,3 +442,17 @@
 #menu[data-active-index="3"]>#menuBackgroundPattern {
     background-position: 0% -100%;
 }
+
+
+.onReveal {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(10%);
+    transition: all 1s;
+}
+
+.revealAnimation {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0%);
+}
