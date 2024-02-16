@@ -3,8 +3,6 @@
 
 
 <template>
-
-
     <div class="pb-32">
 
         <!-- <div id='hero'>
@@ -18,10 +16,10 @@
 
 
 
-        <div class="overflow-hidden h-[120vh] w-[125%] relative">
+        <!-- <div class="overflow-hidden h-[120vh] w-[125%] relative">
 
             <div>
-                <!-- <ParallaxComposant /> -->
+                <ParallaxComposant />
             </div>
             <div data-speedx="0.16" data-speedy="0.25"
                 class="parallax texte absolute z-10 text-center transform -translate-x-1/2 -translate-y-1/2 uppercase leading-none">
@@ -43,7 +41,7 @@
                 src="../assets/img/mountain 5.png" alt="Montagne layer 5">
             <img data-speedx="0.04" data-speedy="0.04" class="parallax absolute z-[18] montagne6"
                 src="../assets/img/mountain 6.png" alt="Montagne layer 6">
-        </div>
+        </div> -->
 
 
 
@@ -67,7 +65,38 @@
                 adaptées aux besoins de ceux pour qui je travaille. Dans ce but je suis actuellement à la recherche d’un
                 stage
                 et plus tard, d’une alternance. </p>
+
+
+            <div class="mt-28">
+                <h3>Compétences</h3>
+
+                <div class="flex flex-col items-center">
+                    <div class="flex uppercase text-xl font-semibold font-urbanist">
+                        <div
+                            class="flex items-center justify-center gap-3 bg-bleu px-6 py-4 border-solid border-2 border-bleu w-64">
+                            <SettingsIcon class="w-10" />
+                            <p>Développement</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu w-64">
+                            <SettingsIcon class="w-10" />
+                            <p>Design</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu w-64">
+                            <SettingsIcon class="w-10" />
+                            <p>Outils</p>
+                        </div>
+                    </div>
+
+                    <div class="border-solid border-2 border-bleu w-full">
+                        test
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-</template>
+
+
+</div></template>

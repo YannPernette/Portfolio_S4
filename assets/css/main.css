@@ -3,6 +3,7 @@
 @import 'splitProjets.css';
 @import 'boutonMenu.css';
 @import '404.css';
+@import 'contact.css';
 
 @tailwind base;
 @tailwind components;
