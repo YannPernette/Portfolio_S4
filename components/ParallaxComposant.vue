@@ -8,15 +8,15 @@ const options = {
     },
     background: {
         color: {
-            value: '#06041C'
+            value: 'transparent'
         }
     },
     particles: {
         color: {
-            value: "#fff"
+            value: "#000"
         },
         links: {
-            color: "#fff",
+            color: "#000",
             enable: true
         },
         move: {
@@ -29,9 +29,7 @@ const options = {
     }
 }
 const onLoad = (container: Container) => {
-    // Do something with the container
-    container.pause()
-    setTimeout(() => container.play(), 2000)
+    setTimeout(() => container.play())
 }
 </script>
 
@@ -40,7 +38,7 @@ const onLoad = (container: Container) => {
 
 
 <template>
-    <div data-speedx="0.25" data-speedy="0.05" class="parallax absolute z-[9] fond-particles w-[125%] h-screen">
-        <NuxtParticles id="tsparticles" :options="options" @load="onLoad"></NuxtParticles>
+    <div class="">
+        <NuxtParticles class="" id="tsparticles" :options="options" @load="onLoad" style="width: 500px; height: 500px;"></NuxtParticles>
     </div>
 </template>

@@ -13,6 +13,7 @@
 
     html {
         @apply text-blanc bg-sombre font-openSans;
+        scroll-behavior: smooth;
         /* height: 100vh; */
         /* overflow: hidden; */
     }
@@ -456,4 +457,90 @@
     opacity: 1;
     filter: blur(0px);
     transform: translateY(0%);
+}
+
+
+
+.selProjet {
+    background-color: #9ED0FF;
+    /* border: #3986B8 solid 2px; */
+    transition: all .5s;
+}
+
+.selProjet::before {
+    content: '<CURRENT>';
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.selProjet::after {
+    content: '</CURRENT>';
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+
+
+
+.parallaxTest {
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.parallaxTest>* {
+    grid-area: stack;
+    animation: parallax linear;
+    animation-timeline: scroll(root);
+}
+
+.parallaxTest>img {
+    width: 100%;
+}
+
+@keyframes parallax {
+    to {
+        transform: translateY(calc(var(--parallax-speed) * 200px));
+    }
+}
+
+.hero {
+    --parallax-speed: 10;
+}
+
+.composantPa {
+    --parallax-speed: 10;
+}
+
+
+
+.scrollContainerAccueil {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.scrollTextAccueil {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: scrollAccueil 10s linear infinite;
+}
+
+.scrollContainerAccueil .scrollTextAccueil {
+    animation-play-state: running;
+}
+
+@keyframes scrollAccueil {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+.titleRollAccueil::before {
+    content: "/";
+    padding-right: 3rem;
 }

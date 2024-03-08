@@ -52,7 +52,7 @@ section .signin
 	position: absolute;
 	width: 500px;
   background: #50505f;  
-	z-index: 1000;
+	z-index: 10;
 	display: flex;
 	justify-content: center;
 	align-items: center;
