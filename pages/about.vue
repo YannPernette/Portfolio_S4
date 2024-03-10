@@ -5,6 +5,8 @@ import competenceTemplate from "~/components/competenceTemplate.vue";
 const { data: Competences, error } = await supabase
     .from('Competences')
     .select('*')
+
+const currentComp = ref('Developpement')
 </script>
 
 
@@ -53,30 +55,35 @@ const { data: Competences, error } = await supabase
         </div>
     </div>
 
-    <div class="flex flex-col items-center mx-44 mb-80">
-        <div class="flex uppercase text-xl font-semibold font-urbanist">
-            <div
-                class="flex items-center justify-center gap-3 bg-bleu px-6 py-4 border-solid border-2 border-bleu w-64">
+    <div class="flex flex-col items-center mx-44 mb-40">
+
+        <div class="grid grid-cols-3 uppercase text-xl font-semibold font-urbanist">
+            <div @click="currentComp = 'Developpement'"
+                class="w-full flex items-center justify-center gap-3 bg-bleu px-6 py-4 border-solid border-2 border-bleu">
                 <SettingsIcon class="w-10" />
                 <p>Développement</p>
             </div>
-            <div class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu w-64">
+            <div @click="currentComp = 'Design'"
+            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu">
                 <SettingsIcon class="w-10" />
                 <p>Design</p>
             </div>
-            <div class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu w-64">
+            <div @click="currentComp = 'Outils'"
+            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu">
                 <SettingsIcon class="w-10" />
                 <p>Outils</p>
             </div>
         </div>
 
-        <div class="border-solid border-2 border-bleu w-full">
+        <div class="border-solid border-2 border-bleu w-full p-4">
 
 
             <div class="flex gap-10">
                 <div v-for="competence in Competences" :key="competence.id">
-                    <competenceTemplate :nom="competence.nom || ''" :lien="competence.lien || ''"
-                        :image="competence.image || ''" :image-alt="competence.imageAlt || ''" />
+                    <div v-if="currentComp === competence.type">
+                        <competenceTemplate :nom="competence.nom || ''" :lien="competence.lien || ''"
+                            :image="competence.image || ''" :image-alt="competence.imageAlt || ''" />
+                    </div>
                 </div>
                 <div v-if="error">{{ error.message }}</div>
             </div>

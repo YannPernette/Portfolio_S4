@@ -17,6 +17,7 @@ export type Database = {
           imageAlt: string | null
           lien: string | null
           nom: string | null
+          type: string | null
         }
         Insert: {
           created_at?: string
@@ -25,6 +26,7 @@ export type Database = {
           imageAlt?: string | null
           lien?: string | null
           nom?: string | null
+          type?: string | null
         }
         Update: {
           created_at?: string
@@ -33,6 +35,7 @@ export type Database = {
           imageAlt?: string | null
           lien?: string | null
           nom?: string | null
+          type?: string | null
         }
         Relationships: []
       }

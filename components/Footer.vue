@@ -1,22 +1,26 @@
 <template>
     <footer>
 
-        <div class="bgFooter flex justify-between pt-44">
+<div class="w-full h-fit relative">
+    <img class="absolute bottom-0 z-[-1]" src="../assets/img/footer_fond.svg" alt="">
 
-            <div>
-                <p>© Yann Pernette | 2023</p>
-            </div>
+    <div class="flex justify-between pt-44">
 
-            <div>
-                <ul class="flex">
-                    <li>gbf</li>
-                    <li>bx</li>
-                    <li>bfxdvs</li>
-                    <li>sqvdws</li>
-                </ul>
-            </div>
+<div>
+    <p>© Yann Pernette | 2023</p>
+</div>
 
-        </div>
+<div>
+    <ul class="flex">
+        <li>gbf</li>
+        <li>bx</li>
+        <li>bfxdvs</li>
+        <li>sqvdws</li>
+    </ul>
+</div>
+
+</div>
+</div>
 
     </footer>
 </template>

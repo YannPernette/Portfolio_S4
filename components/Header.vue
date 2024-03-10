@@ -6,10 +6,12 @@ const isMenuOpen = ref(false);
     <header>
 
         <div class="fixed w-full flex items-center justify-between z-[10000]">
-            <div v-if="isMenuOpen === false"
-                class="border-solid border-[3px] p-2 m-8 rounded-lg border-bleu-medium shadowLogo transition-shadow duration-300">
-                <LogoIcon class="fill-blanc size-12" />
-            </div>
+            <RouterLink to="/">
+                <div v-if="isMenuOpen === false"
+                    class="border-solid border-[3px] p-2 m-8 rounded-lg bg-sombre border-bleu-medium shadowLogo transition-shadow duration-300">
+                    <LogoIcon class="fill-blanc size-12" />
+                </div>
+            </RouterLink>
             <div @click="isMenuOpen = !isMenuOpen">
                 <BoutonMenu class="mr-10" />
             </div>
@@ -74,4 +76,3 @@ const isMenuOpen = ref(false);
 
     </header>
 </template>
-
