@@ -97,17 +97,21 @@ const currentProjet = ref(1)
 
         <div class="scrollContainerAccueil text-center mt-20">
             <div class="scrollTextAccueil uppercase font-urbanist font-bold text-[4rem]">
-                <div v-for="item in 10"><h3 class="titleRollAccueil">Mes projets</h3></div>
+                <div v-for="item in 10">
+                    <h3 class="titleRollAccueil">Mes projets</h3>
+                </div>
             </div>
         </div>
 
         <div class="mt-10 w-full relative uppercase font-electrolize font-medium text-5xl text-blanc">
             <h4 @mouseover="currentProjet = 1"
                 class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé</h4>
+                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé
+            </h4>
             <h4 @mouseover="currentProjet = 2"
                 class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 2 }">Continuous Evolution</h4>
+                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 2 }">Continuous Evolution
+            </h4>
             <h4 @mouseover="currentProjet = 3"
                 class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
                 :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 3 }">TaVue</h4>
@@ -133,6 +137,13 @@ const currentProjet = ref(1)
                         src="../assets/img/preview_projets/preview_tournoi-excellence.png" alt="">
                 </transition>
             </div>
+        </div>
+
+        <div class="text-center mt-10 mb-40">
+            <h4 class="text-[2rem] mb-4">Vous en voulez encore ?</h4>
+            <NuxtLink to="/projets">
+                <BoutonLien text="Découvrez mes 324 projets" />
+            </NuxtLink>
         </div>
 
 

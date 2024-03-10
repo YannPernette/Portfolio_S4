@@ -1,0 +1,99 @@
+// Increase animation delay. The higher the number is, the slower the animation is
+$speed: 15;
+
+
+.animated-title { 
+  color: white;
+  font-size: 4rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Electrolize', 'sans-serif';
+  animation: textGlitch 3s ease-in-out infinite alternate;
+}
+
+.animated-title {
+  span {
+    display: inline-block;
+    min-width: 1rem;
+  }
+  
+  .animate {
+    @for $i from 1 through 100 {
+      &:nth-child(3n+#{$i}){
+        span {
+          opacity: 0;
+          transform: translateY(2px);
+          animation: displayLetter .5s ease-in-out .5s forwards alternate;
+          letter-spacing: 1px;
+
+          @for $i from 1 through 100 {
+            &:nth-child(3n+#{$i}){
+              animation-delay: calc(random($speed) / 10) * 1s
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.animated-word {
+  opacity: 0;
+}
+
+@keyframes displayLetter {
+	0% {
+    transform: translateY(2px);
+    color: white;
+    opacity: 0;
+	}
+  10% {
+    opacity: 1;
+    color: #9ED0FF;
+  }
+  20% {
+    opacity: 0;
+    color: white;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    color: #3986B8;
+    transform: translateY(1px);
+  }
+  60% {
+    opacity: 1;
+    color: white;
+    transform: translateY(1px);
+  }
+	100% {
+    transform: translateY(0);
+    color: white;
+    opacity: 1;
+	}
+}
+
+@keyframes textGlitch {
+  0% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+	95% {
+    opacity: 0.1;
+  }
+  96% {
+    opacity: 1;
+    transform: translateX(1px);
+  }
+  97% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

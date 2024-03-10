@@ -4,6 +4,7 @@
 @import 'boutonMenu.css';
 @import '404.css';
 @import 'contact.css';
+@import 'aboutanimationstart.scss';
 
 @tailwind base;
 @tailwind components;
@@ -523,7 +524,7 @@
     display: flex;
     gap: 3rem;
     white-space: nowrap;
-    animation: scrollAccueil 10s linear infinite;
+    animation: scrollAccueil 15s linear infinite;
 }
 
 .scrollContainerAccueil .scrollTextAccueil {

@@ -21,8 +21,8 @@
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
-                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]" src="../assets/img/fond_code.webp"
-                    alt="Fond code">
+                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
+                    src="../assets/img/fond_code.webp" alt="Fond code">
             </div>
 
             <div
@@ -36,8 +36,8 @@
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
-                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]" src="../assets/img/fond_design.webp"
-                    alt="Fond design">
+                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
+                    src="../assets/img/fond_design.webp" alt="Fond design">
             </div>
         </div>
     </div>
