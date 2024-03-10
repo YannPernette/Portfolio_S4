@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import { supabase } from "@/supabase";
+import competenceTemplate from "~/components/competenceTemplate.vue";
+// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
+const { data: Competences, error } = await supabase
+    .from('Competences')
+    .select('*')
+</script>
+
+
+
+
 <template>
     <div class="pt-20 mb-20">
         <animationAbout />
@@ -59,7 +71,17 @@
         </div>
 
         <div class="border-solid border-2 border-bleu w-full">
-            test
+
+
+            <div class="flex gap-10">
+                <div v-for="competence in Competences" :key="competence.id">
+                    <competenceTemplate :nom="competence.nom || ''" :lien="competence.lien || ''"
+                        :image="competence.image || ''" :image-alt="competence.imageAlt || ''" />
+                </div>
+                <div v-if="error">{{ error.message }}</div>
+            </div>
+
+
         </div>
     </div>
 
