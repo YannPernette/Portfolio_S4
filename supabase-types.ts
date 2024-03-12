@@ -39,6 +39,30 @@ export type Database = {
         }
         Relationships: []
       }
+      Projets: {
+        Row: {
+          created_at: string
+          id: number
+          image: string | null
+          imageAlt: string | null
+          nom: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          image?: string | null
+          imageAlt?: string | null
+          nom?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          image?: string | null
+          imageAlt?: string | null
+          nom?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

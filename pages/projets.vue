@@ -1,5 +1,10 @@
 <script setup lang="ts">
-
+import { supabase } from "@/supabase";
+import projetTemplate from "~/components/projetTemplate.vue";
+// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
+const { data: Projets, error } = await supabase
+    .from('Projets')
+    .select('*')
 </script>
 
 
@@ -43,47 +48,13 @@
     </div>
 
 
-    <div class="mt-20 mx-24 mb-96">
+    <div class="mt-20 mx-24 mb-40">
 
         <div class="grid grid-cols-2 grid-rows-2 gap-10">
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
-                <img class="border-solid border-2 border-bleu-medium mb-4"
-                    src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
-                <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
-                    <div class="scroll-text uppercase font-medium text-2xl tracking-widest">
-                        <h3>Le futur a déjà commencé</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
-                <img class="border-solid border-2 border-bleu-medium mb-4"
-                    src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
-                <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
-                    <div class="scroll-text uppercase font-medium text-2xl tracking-widest">
-                        <h3>Le futur a déjà commencé</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
-                <img class="border-solid border-2 border-bleu-medium mb-4"
-                    src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
-                <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
-                    <div class="scroll-text uppercase font-medium text-2xl tracking-widest">
-                        <h3>Le futur a déjà commencé</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
-                <img class="border-solid border-2 border-bleu-medium mb-4"
-                    src="../assets/img/preview_projets/preview_lfadc.png" alt="preview LFADC">
-                <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
-                    <div class="scroll-text uppercase font-medium text-2xl tracking-widest">
-                        <h3>Le futur a déjà commencé</h3>
-                    </div>
-                </div>
+            <div v-for="projet in Projets" :key="projet.id">
+                <projetTemplate :nom="projet.nom || ''" :image="projet.image || ''"
+                    :image-alt="projet.imageAlt || ''" />
+                <div v-if="error">{{ error.message }}</div>
             </div>
         </div>
 

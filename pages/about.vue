@@ -56,10 +56,9 @@ const currentComp = ref('Developpement')
     </div>
 
     <div class="flex flex-col items-center mx-44 mb-40">
-
-        <div class="grid grid-cols-3 uppercase text-xl font-semibold font-urbanist">
+        <div class="grid grid-cols-3 w-full uppercase text-xl font-semibold font-urbanist">
             <div @click="currentComp = 'Developpement'"
-                class="w-full flex items-center justify-center gap-3 bg-bleu px-6 py-4 border-solid border-2 border-bleu">
+                class="flex items-center justify-center gap-3 bg-bleu px-0 py-4 border-solid border-2 border-bleu">
                 <SettingsIcon class="w-10" />
                 <p>Développement</p>
             </div>
@@ -75,9 +74,7 @@ const currentComp = ref('Developpement')
             </div>
         </div>
 
-        <div class="border-solid border-2 border-bleu w-full p-4">
-
-
+        <div class="border-solid border-2 border-t-0 border-bleu w-full p-4">
             <div class="flex gap-10">
                 <div v-for="competence in Competences" :key="competence.id">
                     <div v-if="currentComp === competence.type">
@@ -87,8 +84,6 @@ const currentComp = ref('Developpement')
                 </div>
                 <div v-if="error">{{ error.message }}</div>
             </div>
-
-
         </div>
     </div>
 
