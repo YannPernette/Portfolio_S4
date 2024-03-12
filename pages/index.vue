@@ -1,4 +1,14 @@
 <script setup lang="ts">
+import { supabase } from "@/supabase";
+import projetTemplate from "~/components/projetTemplate.vue";
+// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
+const { data: Projets, error } = await supabase
+    .from('Projets')
+    .select('*')
+</script>
+
+
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const currentProjet = ref(1)
@@ -69,14 +79,16 @@ const currentProjet = ref(1)
         </div> -->
 
 
-        <div class="h-screen bg-blanc text-noir relative overflow-hidden parallaxTest">
+        <div class="h-screen bg-blanc text-noir relative overflow-hidden parallaxTest pointer-events-none">
             <div class="flex items-center justify-center gap-20 hero">
                 <div class="flex justify-evenly items-center h-screen">
                     <div class="uppercase">
                         <h1 class="font-orbitron font-medium text-[5rem] leading-tight">Yann</h1>
                         <h1 class="font-orbitron font-medium text-[5rem]">Pernette</h1>
                         <h2 class="normal-case font-electrolize text-[4rem]">Développeur Front-End</h2>
-                        <div class="font-bold">Découvrir mon travail</div>
+                        <NuxtLink to="/projets">
+                            <BoutonLien text="Découvrir mon travail" />
+                        </NuxtLink>
                     </div>
                 </div>
 
@@ -105,7 +117,7 @@ const currentProjet = ref(1)
 
         <div class="mt-10 w-full relative uppercase font-electrolize font-medium text-5xl text-blanc">
             <h4 @mouseover="currentProjet = 1"
-                class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
+                class="py-7 flex items-center border-solid border-b-4 border-b-noir"
                 :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé
             </h4>
             <h4 @mouseover="currentProjet = 2"
@@ -145,7 +157,7 @@ const currentProjet = ref(1)
                 <BoutonLien text="Découvrez mes 324 projets" />
             </NuxtLink>
         </div>
-        
+
 
 
 

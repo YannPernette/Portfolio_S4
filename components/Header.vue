@@ -2,17 +2,37 @@
 const isMenuOpen = ref(false);
 </script>
 
+
 <template>
     <header>
 
-        <div class="fixed w-full flex items-center justify-between z-[10000]">
-            <RouterLink to="/">
+        <div
+            class="navbarHeader navbarStyle hidden fixed w-full items-center justify-between z-[10000] py-3 px-10 text-[20px] uppercase tracking-wider font-electrolize font-medium">
+            <NuxtLink to="/">
                 <div v-if="isMenuOpen === false"
-                    class="border-solid border-[3px] p-2 m-8 rounded-lg bg-sombre border-bleu-medium shadowLogo transition-shadow duration-300">
+                    class="border-solid border-[3px] p-2 rounded-lg bg-sombre border-bleu-medium shadowLogo transition-shadow duration-300">
                     <LogoIcon class="fill-blanc size-12" />
                 </div>
-            </RouterLink>
-            <div @click="isMenuOpen = !isMenuOpen">
+            </NuxtLink>
+
+            <div class="uppercase">
+                <ul class="flex gap-20">
+                    <NuxtLink to="/about"><li class="underlineAnimation">À propos</li></NuxtLink>
+                    <NuxtLink to="/projets"><li class="underlineAnimation">Projets</li></NuxtLink>
+                    <li class="borderAnimation">Mon CV</li>
+                </ul>
+            </div>
+
+            <NuxtLink to="/contact">
+                <div
+                    class="boutonSendNav items-center flex bg-blanc text-noir px-4 py-3 rounded-full">
+                    <h5 class="">Me Contacter</h5>
+                    <SendIcon class="visibleSendNav size-0 transition-all duration-300" />
+                </div>
+            </NuxtLink>
+
+
+            <div class="hidden" @click="isMenuOpen = !isMenuOpen">
                 <BoutonMenu class="mr-10" />
             </div>
         </div>
@@ -47,18 +67,6 @@ const isMenuOpen = ref(false);
                     </ul>
                     <div id="menuBackgroundPattern"></div>
                 </div>
-
-                <!-- <div class="flex w-fit items-center gap-6">
-                        <div
-                            class="border-solid border-[3px] p-2 rounded-lg border-bleu-medium shadowLogo transition-shadow duration-300 hover:border-bleu-medium">
-                            <LogoIcon class="fill-blanc size-14" />
-                        </div>
-                        <div class="font-urbanist">
-                            <h4 class="uppercase font-medium text-2xl">Yann Pernette</h4>
-                            <h5 class="font-light text-xl">Développeur Front</h5>
-                        </div>
-                    </div> -->
-
             </nav>
 
             <NuxtLink to="/contact">

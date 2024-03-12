@@ -9,11 +9,7 @@ const { data: Projets, error } = await supabase
 
 
 <template>
-    <div class="h-[35rem]">
-        <h1
-            class="absolute z-30 top-20 left-1/2 transform -translate-x-1/2 font-urbanist font-thin text-3xl pointer-events-none">
-            Envie de
-            découvrir un peu de...</h1>
+    <div class="h-[35rem] pt-10">
 
         <div class="grid grid-cols-2 ">
             <div class="splitGen transition-all duration-300 ease-in-out relative w-full hover:w-[120%] hover:z-10 z-0">

@@ -2,7 +2,7 @@
     <footer>
 
 <div class="w-full h-fit relative">
-    <img class="absolute bottom-0 z-[-1]" src="../assets/img/footer_fond.svg" alt="">
+    <img class="absolute w-full h-fit z-[-1]" src="../assets/img/footer_fond.svg" alt="">
 
     <div class="flex justify-between pt-44">
 
