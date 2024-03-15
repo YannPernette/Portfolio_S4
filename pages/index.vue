@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { supabase } from "@/supabase";
-import projetTemplate from "~/components/projetTemplate.vue";
+import projetFavoriTemplate from "~/components/projetFavoriTemplate.vue";
 // console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
 const { data: Projets, error } = await supabase
     .from('Projets')
     .select('*')
-</script>
+    .eq('favori', true)
 
+let imagesProjet = Projets.map(projet => projet.image)
 
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const currentProjet = ref(1)
+const currentProjet = ref(0)
 </script>
 
 
@@ -107,17 +105,29 @@ const currentProjet = ref(1)
 
 
 
-        <div class="scrollContainerAccueil text-center mt-20">
-            <div class="scrollTextAccueil uppercase font-urbanist font-bold text-[4rem]">
+        <div class="scrollContainerAccueil text-center mt-20 mb-10">
+            <div class="scrollTextAccueil uppercase font-urbanist font-bold text-[3rem]">
                 <div v-for="item in 10">
                     <h3 class="titleRollAccueil">Mes projets</h3>
                 </div>
             </div>
         </div>
 
+
+        <div class="border-b-2 border-b-bleu-medium border-solid">
+            <div v-for="projet in Projets" :key="projet.id">
+                <projetFavoriTemplate :nom="projet.nom || ''" :image="projet.image || ''"
+                    :image-alt="projet.imageAlt || ''" />
+                    <!-- <div v-if ></div> -->
+                <div v-if="error">{{ error.message }}</div>
+            </div>
+        </div>
+
+
+
+
         <div class="mt-10 w-full relative uppercase font-electrolize font-medium text-5xl text-blanc">
-            <h4 @mouseover="currentProjet = 1"
-                class="py-7 flex items-center border-solid border-b-4 border-b-noir"
+            <h4 @mouseover="currentProjet = 1" class="py-7 flex items-center border-solid border-b-4 border-b-noir"
                 :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé
             </h4>
             <h4 @mouseover="currentProjet = 2"

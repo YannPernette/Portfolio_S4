@@ -58,17 +58,17 @@ const currentComp = ref('Developpement')
     <div class="flex flex-col items-center mx-44 mb-40">
         <div class="grid grid-cols-3 w-full uppercase text-xl font-semibold font-urbanist">
             <div @click="currentComp = 'Developpement'"
-                class="flex items-center justify-center gap-3 bg-bleu px-0 py-4 border-solid border-2 border-bleu">
+                class="flex items-center justify-center gap-3 px-0 py-4 border-solid border-2 border-bleu" :class="{ 'bg-bleu transition-colors duration-200': currentComp === 'Developpement' }">
                 <SettingsIcon class="w-10" />
                 <p>Développement</p>
             </div>
             <div @click="currentComp = 'Design'"
-            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu">
+            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu" :class="{ 'bg-bleu transition-colors duration-200': currentComp === 'Design' }">
                 <SettingsIcon class="w-10" />
                 <p>Design</p>
             </div>
             <div @click="currentComp = 'Outils'"
-            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu">
+            class="flex items-center justify-center gap-3 px-6 py-4 border-solid border-2 border-bleu" :class="{ 'bg-bleu transition-colors duration-200': currentComp === 'Outils' }">
                 <SettingsIcon class="w-10" />
                 <p>Outils</p>
             </div>
