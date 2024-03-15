@@ -19,7 +19,7 @@ const isMenuOpen = ref(false);
                 <ul class="flex gap-20">
                     <NuxtLink to="/about"><li class="underlineAnimation">À propos</li></NuxtLink>
                     <NuxtLink to="/projets"><li class="underlineAnimation">Projets</li></NuxtLink>
-                    <li class="borderAnimation">Mon CV</li>
+                    <a href="https://media.yann-pernette.fr/CV_Yann_Pernette_Online.pdf" target="_blank"><li class="borderAnimation">Mon CV</li></a>
                 </ul>
             </div>
 
