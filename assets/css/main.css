@@ -549,11 +549,11 @@
 }
 
 .hero {
-    --parallax-speed: 7;
+    --parallax-speed: 30;
 }
 
 .composantPa {
-    --parallax-speed: 6;
+    --parallax-speed: 25;
 }
 
 
