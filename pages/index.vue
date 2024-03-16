@@ -7,8 +7,7 @@ const { data: Projets, error } = await supabase
     .select('*')
     .eq('favori', true)
 
-let imagesProjet = Projets.map(projet => projet.image)
-
+const imagesProjet = Projets ? Projets.map(projet => projet.image) : []
 const currentProjet = ref(0)
 </script>
 
@@ -97,8 +96,8 @@ const currentProjet = ref(0)
                 <ParallaxComposant />
             </div>
 
-            <img class="z-[3] opacity-90 absolute bottom-0" src="../assets/img/cache_back.svg" alt="">
-            <img class="z-[4] absolute bottom-0" src="../assets/img/cache_front.svg" alt="">
+            <img class="z-[3] opacity-90 absolute bottom-0 right-[-1px]" src="../assets/img/cache_back.svg" alt="">
+            <img class="z-[4] absolute bottom-0 right-[-1px]" src="../assets/img/cache_front.svg" alt="">
         </div>
 
 
@@ -114,11 +113,14 @@ const currentProjet = ref(0)
         </div>
 
 
-        <div class="border-b-2 border-b-bleu-medium border-solid">
-            <div v-for="projet in Projets" :key="projet.id">
-                <projetFavoriTemplate :nom="projet.nom || ''" :image="projet.image || ''"
-                    :image-alt="projet.imageAlt || ''" />
-                    <!-- <div v-if ></div> -->
+        <div class="relative overflow-hidden">
+            <div v-for="(projet, index) in Projets" :key="index">
+                <projetFavoriTemplate @mouseover="currentProjet = index" :nom="projet.nom || ''"
+                    :image="projet.image || ''" :image-alt="projet.imageAlt || ''" />
+                <div v-if="currentProjet === index"
+                    class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
+                        <img :src="projet.image" :alt="projet.imageAlt" class="rounded-lg">
+                </div>
                 <div v-if="error">{{ error.message }}</div>
             </div>
         </div>
@@ -126,40 +128,40 @@ const currentProjet = ref(0)
 
 
 
-        <div class="mt-10 w-full relative uppercase font-electrolize font-medium text-5xl text-blanc">
-            <h4 @mouseover="currentProjet = 1" class="py-7 flex items-center border-solid border-b-4 border-b-noir"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé
-            </h4>
-            <h4 @mouseover="currentProjet = 2"
-                class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 2 }">Continuous Evolution
-            </h4>
-            <h4 @mouseover="currentProjet = 3"
-                class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 3 }">TaVue</h4>
-            <h4 @mouseover="currentProjet = 4" class="py-7 flex items-center justify-center"
-                :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 4 }">Tournoi Excellence</h4>
+        <!-- <div class="mt-10 w-full relative uppercase font-electrolize font-medium text-5xl text-blanc">
+        <h4 @mouseover="currentProjet = 1" class="py-7 flex items-center border-solid border-b-4 border-b-noir"
+            :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 1 }">Le futur a déjà commencé
+        </h4>
+        <h4 @mouseover="currentProjet = 2"
+            class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
+            :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 2 }">Continuous Evolution
+        </h4>
+        <h4 @mouseover="currentProjet = 3"
+            class="py-7 flex items-center justify-center border-solid border-b-4 border-b-noir"
+            :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 3 }">TaVue</h4>
+        <h4 @mouseover="currentProjet = 4" class="py-7 flex items-center justify-center"
+            :class="{ 'selProjet justify-between px-[5%] text-noir': currentProjet === 4 }">Tournoi Excellence</h4>
 
-            <div class="absolute z-[-1] size-full top-0">
-                <div class="absolute size-full top-0 bg-bleu opacity-[90%]"></div>
-                <transition name="fade">
-                    <img v-if="currentProjet === 1" class="absolute size-full top-0 object-cover z-[-2]"
-                        src="../assets/img/preview_projets/preview_lfadc.png" alt="">
-                </transition>
-                <transition name="fade">
-                    <img v-if="currentProjet === 2" class="absolute size-full top-0 object-contain z-[-2]"
-                        src="../assets/img/preview_projets/preview_continuous-evolution.png" alt="">
-                </transition>
-                <transition name="fade">
-                    <img v-if="currentProjet === 3" class="absolute size-full top-0 object-cover z-[-2]"
-                        src="../assets/img/preview_projets/preview_tavue.png" alt="">
-                </transition>
-                <transition name="fade">
-                    <img v-if="currentProjet === 4" class="absolute size-full top-0 object-cover z-[-2]"
-                        src="../assets/img/preview_projets/preview_tournoi-excellence.png" alt="">
-                </transition>
-            </div>
+        <div class="absolute z-[-1] size-full top-0">
+            <div class="absolute size-full top-0 bg-bleu opacity-[90%]"></div>
+            <transition name="fade">
+                <img v-if="currentProjet === 1" class="absolute size-full top-0 object-cover z-[-2]"
+                    src="../assets/img/preview_projets/preview_lfadc.png" alt="">
+            </transition>
+            <transition name="fade">
+                <img v-if="currentProjet === 2" class="absolute size-full top-0 object-contain z-[-2]"
+                    src="../assets/img/preview_projets/preview_continuous-evolution.png" alt="">
+            </transition>
+            <transition name="fade">
+                <img v-if="currentProjet === 3" class="absolute size-full top-0 object-cover z-[-2]"
+                    src="../assets/img/preview_projets/preview_tavue.png" alt="">
+            </transition>
+            <transition name="fade">
+                <img v-if="currentProjet === 4" class="absolute size-full top-0 object-cover z-[-2]"
+                    src="../assets/img/preview_projets/preview_tournoi-excellence.png" alt="">
+            </transition>
         </div>
+    </div> -->
 
         <div class="text-center mt-10 mb-40">
             <h4 class="text-[2rem] mb-4">Vous en voulez encore ?</h4>
@@ -175,26 +177,3 @@ const currentProjet = ref(0)
 </template>
 
 
-
-<style scoped>
-/* .fade-enter-active,
-.fade-leave-active {
-    transition: slideIn 2s;
-}
-
-.fade-enter,
-.fade-leave-to {
-    transition: slideIn 2s;
-}
-
-@keyframes slideIn {
-
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-} */
-</style>
