@@ -11,7 +11,7 @@ const { data: Projets, error } = await supabase
 <template>
     <div class="h-[35rem] pt-10">
 
-        <div class="grid grid-cols-2 ">
+        <div class="grid grid-cols-2 overflow-hidden">
             <div class="splitGen transition-all duration-300 ease-in-out relative w-full hover:w-[120%] hover:z-10 z-0">
                 <h2
                     class="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-urbanist font-black text-[3rem] uppercase leading-tight text-center">
@@ -23,7 +23,7 @@ const { data: Projets, error } = await supabase
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
                 <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
-                    src="../assets/img/fond_code.webp" alt="Fond code">
+                    src="../../assets/img/fond_code.webp" alt="Fond code">
             </div>
 
             <div
@@ -38,7 +38,7 @@ const { data: Projets, error } = await supabase
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
                 <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
-                    src="../assets/img/fond_design.webp" alt="Fond design">
+                    src="../../assets/img/fond_design.webp" alt="Fond design">
             </div>
         </div>
     </div>
@@ -47,11 +47,14 @@ const { data: Projets, error } = await supabase
     <div class="mt-20 mx-24 mb-40">
 
         <div class="grid grid-cols-2 grid-rows-2 gap-10">
-            <div v-for="projet in Projets" :key="projet.id">
+            <NuxtLink v-for="projet in Projets" :key="projet.id" :to="{
+                name: 'projets-id',
+                params: { id: projet.id },
+            }">
                 <projetTemplate :nom="projet.nom || ''" :image="projet.image || ''"
                     :image-alt="projet.imageAlt || ''" />
                 <div v-if="error">{{ error.message }}</div>
-            </div>
+            </NuxtLink>
         </div>
 
     </div>

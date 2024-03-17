@@ -114,15 +114,15 @@ const currentProjet = ref(0)
 
 
         <div class="relative overflow-hidden">
-            <div v-for="(projet, index) in Projets" :key="index">
-                <projetFavoriTemplate @mouseover="currentProjet = index" :nom="projet.nom || ''"
-                    :image="projet.image || ''" :image-alt="projet.imageAlt || ''" />
-                <div v-if="currentProjet === index"
-                    class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
+                <div v-for="(projet, index) in Projets" :key="index">
+                    <projetFavoriTemplate @mouseover="currentProjet = index" :nom="projet.nom || ''"
+                        :image="projet.image || ''" :image-alt="projet.imageAlt || ''" />
+                    <div v-if="currentProjet === index"
+                        class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
                         <img :src="projet.image" :alt="projet.imageAlt" class="rounded-lg">
+                    </div>
+                    <div v-if="error">{{ error.message }}</div>
                 </div>
-                <div v-if="error">{{ error.message }}</div>
-            </div>
         </div>
 
 
@@ -175,5 +175,3 @@ const currentProjet = ref(0)
 
     </div>
 </template>
-
-
