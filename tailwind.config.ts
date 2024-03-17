@@ -10,6 +10,7 @@ export default <Partial<Config>>{
             "blanc": "#FFFFFF",
             "bleu-medium": "#9ED0FF",
             "bleu": "#3986B8",
+            "bleu-fonce": "#0D2D4A",
         },
         boxShadow: {
             "style-bouton-1": "5px 7px 4px 0px rgba(150,195,217,0.25)"

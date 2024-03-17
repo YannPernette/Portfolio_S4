@@ -10,7 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
       to.meta.pageTransition = { name: 'page-left' };
       from.meta.pageTransition = { name: 'page-left' };
     } else {
-      to.meta.pageTransition = { name: 'page-right' };
-      from.meta.pageTransition = { name: 'page-right' };
+      to.meta.pageTransition = { name: 'page-blur' };
+      from.meta.pageTransition = { name: 'page-blur' };
     }
   })

@@ -13,15 +13,15 @@
 
 <style>
 .page-left-enter-active,
-.page-right-enter-active,
+.page-blur-enter-active,
 .page-left-leave-active,
-.page-right-leave-active {
-    position: fixed;
-    z-index: -100000;
-    top: 0;
+.page-blur-leave-active {
+    /* position: fixed; */
+    /* z-index: -100000; */
+    /* top: 0;
     left: 0;
-    right: 0;
-    transition: all 1s linear;
+    right: 0; */
+    transition: all 0.6s cubic-bezier(.33,-0.02,.64,.96);
 }
 
 .page-left-enter-from,
@@ -37,5 +37,11 @@
 .page-left-enter-to,
 .page-right-enter-to {
     transform: translateY(0);
+}
+
+.page-blur-enter-from,
+.page-blur-leave-to {
+    /* opacity: 0; */
+    filter: blur(1rem);
 }
 </style>
