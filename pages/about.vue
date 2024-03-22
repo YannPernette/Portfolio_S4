@@ -13,11 +13,11 @@ const currentComp = ref('Developpement')
 
 
 <template>
-    <div class="pt-20 mb-20">
+    <div class="pt-40 mb-20">
         <animationAbout />
     </div>
 
-    <div class="mx-44 flex justify-between items-end mb-28">
+    <div class="mx-[10%] flex justify-between items-end mb-28">
         <div class="w-[25%] relative">
             <img class="px-1 pb-1" src="../assets/img/bitmap_portfolio.webp" alt="">
             <div class="w-full h-[70%] absolute z-[-1] bottom-0 border-solid border-bleu-medium border-[1px]"></div>
@@ -55,7 +55,7 @@ const currentComp = ref('Developpement')
         </div>
     </div>
 
-    <div class="flex flex-col items-center mx-44 mb-40">
+    <div class="flex flex-col items-center mx-[10%] mb-40">
         <div class="grid grid-cols-3 w-full uppercase text-xl font-semibold font-urbanist">
             <div @click="currentComp = 'Developpement'"
                 class="flex items-center justify-center gap-3 px-0 py-4 border-solid border-2 border-bleu" :class="{ 'bg-bleu transition-colors duration-200': currentComp === 'Developpement' }">

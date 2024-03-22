@@ -7,8 +7,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
     const fromDepth = getDepth(from.path);
   
     if (toDepth >= fromDepth) {
-      to.meta.pageTransition = { name: 'page-left' };
-      from.meta.pageTransition = { name: 'page-left' };
+      to.meta.pageTransition = { name: 'page-up' };
+      from.meta.pageTransition = { name: 'page-up' };
     } else {
       to.meta.pageTransition = { name: 'page-blur' };
       from.meta.pageTransition = { name: 'page-blur' };

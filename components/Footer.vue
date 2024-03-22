@@ -3,10 +3,12 @@
 
         <div class="bg-blanc relative isolate">
 
-            <h5 class="absolute font-orbitron top-[-130px] left-1/2 transform -translate-x-1/2  text-[10rem] text-center uppercase font-extrabold tracking-[5rem] mix-blend-difference">Contact</h5>
+            <h5
+                class="absolute opacity-80 font-orbitron top-[-65px] left-1/2 transform -translate-x-1/2  text-[5rem] text-center uppercase font-extrabold tracking-[5rem] mix-blend-difference">
+                Contact</h5>
 
-            <div class="text-noir flex justify-center items-center gap-20 pt-32 pb-20">
-                <p class="text-[1.1rem] max-w-[30%]">Vous souhaitez discuter, collaborer sur des projets passionnants ou
+            <div class="text-noir flex justify-center items-center gap-20 pt-20 pb-10">
+                <p class="text-lg max-w-[30%]">Vous souhaitez discuter, collaborer sur des projets passionnants ou
                     simplement échanger des idées ?
                 </p>
 
@@ -19,27 +21,40 @@
                 </NuxtLink>
             </div>
 
-            <div class="w-full h-fit relative bg-bleu-fonce pt-20 rounded-t-xl">
+            <div class="w-full h-fit relative bg-bleu-fonce rounded-t-xl">
 
-                <div>
+                <div class="flex items-end justify-between mx-[10%] pt-10 mb-10">
                     <div class="flex flex-col uppercase tracking-wider font-electrolize font-medium">
-                        <ul class="flex flex-row">
+                        <ul class="flex flex-row gap-10 text-xl">
                             <NuxtLink to="/about">
-                                <li class="">À propos</li>
+                                <li class="underlineAnimation">À propos</li>
                             </NuxtLink>
                             <NuxtLink to="/projets">
-                                <li class="">Projets</li>
+                                <li class="underlineAnimation">Projets</li>
                             </NuxtLink>
-                        </ul>
-                        <ul class="flex flex-row">
-                            <NuxtLink to="/about">
-                                <li class="">Mention légales</li>
+                            <NuxtLink to="/">
+                                <li class="underlineAnimation">Mentions légales</li>
                             </NuxtLink>
                         </ul>
                     </div>
+
+                    <div class="flex items-center gap-10">
+                        <div class="flip-container">
+                            <IconInstagram class="w-12 flip" />
+                        </div>
+                        <div class="flip-container">
+                            <IconTwitter class="w-12 flip" />
+                        </div>
+                        <div class="flip-container">
+                            <IconGithub class="w-12 flip" />
+                        </div>
+                        <div class="flip-container">
+                            <IconLinkedin class="w-12 flip" />
+                        </div>
+                    </div>
                 </div>
 
-                <div class="text-center pb-3">
+                <div class="text-center pb-3 font-orbitron text-lg tracking-widest">
                     <p>© Yann Pernette | 2024</p>
                 </div>
 

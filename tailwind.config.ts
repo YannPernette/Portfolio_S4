@@ -35,6 +35,7 @@ export default <Partial<Config>>{
         fontSize: {
             // sm: '0.8rem',
             // base: '1rem',
+            lg: '1.1rem',
             xl: '1.25rem',
             '2xl': '1.65vw',
             '3xl': '1.953rem',

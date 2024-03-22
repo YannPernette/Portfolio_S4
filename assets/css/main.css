@@ -622,10 +622,28 @@
 }
 
 .competenceHover:hover img {
+    transition: all 0.2s;
     --tw-grayscale: grayscale(0);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .competenceHover:hover h5 {
+    transition: all 0.2s;
     font-weight: 700;
+}
+
+
+/* FLIP ANIMATION HOVER FOOTER ICON */
+
+.flip-container {
+    perspective: 1000px;
+}
+
+.flip {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .flip {
+    transform: rotateY(180deg);
 }
