@@ -17,7 +17,7 @@ const currentComp = ref('Developpement')
         <animationAbout />
     </div>
 
-    <div class="mx-[10%] md:mx-[6%] flex md:flex-col justify-between items-end md:items-center md:gap-10 mb-28">
+    <div class="mx-[10%] md:mx-[6%] flex md:flex-col justify-between items-center md:gap-10 mb-28">
         <div class="w-[25%] md:w-[30%] relative">
             <img class="px-1 pb-1" src="../assets/img/bitmap_portfolio.webp" alt="">
             <div class="w-full h-[70%] absolute z-[-1] bottom-0 border-solid border-bleu-medium border-[1px]"></div>

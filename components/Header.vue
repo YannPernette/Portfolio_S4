@@ -15,7 +15,7 @@ const isMenuOpen = ref(false);
                 </div>
             </NuxtLink>
 
-            <div class="uppercase">
+            <div class="uppercase md:hidden">
                 <ul class="flex gap-20">
                     <NuxtLink to="/about"><li class="underlineAnimation">À propos</li></NuxtLink>
                     <NuxtLink to="/projets"><li class="underlineAnimation">Projets</li></NuxtLink>
@@ -25,15 +25,15 @@ const isMenuOpen = ref(false);
 
             <NuxtLink to="/contact">
                 <div
-                    class="boutonSendNav items-center flex bg-blanc text-noir px-4 py-3 rounded-full">
+                    class="boutonSendNav md:hidden items-center flex bg-blanc text-noir px-4 py-3 rounded-full">
                     <h5 class="">Me Contacter</h5>
                     <SendIcon class="visibleSendNav size-0 transition-all duration-300" />
                 </div>
             </NuxtLink>
 
 
-            <div class="hidden" @click="isMenuOpen = !isMenuOpen">
-                <BoutonMenu class="mr-10" />
+            <div class="hidden md:block" @click="isMenuOpen = !isMenuOpen">
+                <BoutonMenu />
             </div>
         </div>
 
