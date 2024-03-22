@@ -5,6 +5,6 @@ const route = useRoute();
 
 <template>
     <div class="py-80">
-        <ProjetPageTemplate :id="route.params.id.toString()" />
+        <ProjetPage :id="route.params.id.toString()" />
     </div>
 </template>

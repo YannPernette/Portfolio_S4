@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { supabase } from "@/supabase";
-import projetTemplate from "~/components/projetTemplate.vue";
-// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
-const { data: Projets, error } = await supabase
-    .from('Projets')
+const { data: Projet, error } = await supabase
+    .from('Projet')
     .select('*')
 </script>
+
 
 
 <template>
@@ -47,12 +46,11 @@ const { data: Projets, error } = await supabase
     <div class="mt-20 mx-24 mb-40">
 
         <div class="grid grid-cols-2 grid-rows-2 gap-10">
-            <NuxtLink v-for="projet in Projets" :key="projet.id" :to="{
+            <NuxtLink v-for="projet in Projet" :key="projet.id" :to="{
                 name: 'projets-id',
                 params: { id: projet.id },
             }">
-                <projetTemplate :nom="projet.nom || ''" :image="projet.image || ''"
-                    :image-alt="projet.imageAlt || ''" />
+                <ProjetPreview v-bind="{ ...projet, id: projet.id.toString() }" />
                 <div v-if="error">{{ error.message }}</div>
             </NuxtLink>
         </div>

@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { supabase } from "@/supabase";
-import projetFavoriTemplate from "~/components/projetFavoriTemplate.vue";
-// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
-const { data: Projets, error } = await supabase
-    .from('Projets')
+const { data: Projet, error } = await supabase
+    .from('Projet')
     .select('*')
     .eq('favori', true)
 
-const imagesProjet = Projets ? Projets.map(projet => projet.image) : []
+const imagesProjet = Projet ? Projet.map(projet => projet.image) : []
 const currentProjet = ref(0)
 </script>
 
@@ -114,12 +112,11 @@ const currentProjet = ref(0)
 
 
         <div class="relative overflow-hidden">
-                <div v-for="(projet, index) in Projets" :key="index">
-                    <projetFavoriTemplate @mouseover="currentProjet = index" :nom="projet.nom || ''"
-                        :image="projet.image || ''" :image-alt="projet.imageAlt || ''" />
+                <div v-for="(projet, index) in Projet" :key="index">
+                    <ProjetHomePreview v-bind="{ ...projet, id: projet.id.toString() }" @mouseover="currentProjet = index" />
                     <div v-if="currentProjet === index"
                         class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
-                        <img :src="projet.image" :alt="projet.imageAlt" class="rounded-lg">
+                        <img :src="projet.image || ''" :alt="projet.imageAlt  || ''" class="rounded-lg">
                     </div>
                     <div v-if="error">{{ error.message }}</div>
                 </div>
