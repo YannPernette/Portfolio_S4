@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       meta: [
         { charset: "utf-8" },
         { name: "description", content: "Le site de Porfolio réalisé pour MMI" },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
       script: [
         {

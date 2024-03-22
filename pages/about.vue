@@ -17,13 +17,13 @@ const currentComp = ref('Developpement')
         <animationAbout />
     </div>
 
-    <div class="mx-[10%] flex justify-between items-end mb-28">
-        <div class="w-[25%] relative">
+    <div class="mx-[10%] md:mx-[6%] flex md:flex-col justify-between items-end md:items-center md:gap-10 mb-28">
+        <div class="w-[25%] md:w-[30%] relative">
             <img class="px-1 pb-1" src="../assets/img/bitmap_portfolio.webp" alt="">
             <div class="w-full h-[70%] absolute z-[-1] bottom-0 border-solid border-bleu-medium border-[1px]"></div>
         </div>
 
-        <div class="max-w-[55%]">
+        <div class="max-w-[55%] md:max-w-full">
             <h3 class="text-3xl font-urbanist font-bold mb-2">Bonjour, je suis Yann.</h3>
             <h4 class="text-xl font-semibold">Quelqu’un qui pense qu’un bon design ne peut pas exister sans un bon code.
             </h4>
@@ -37,7 +37,7 @@ const currentComp = ref('Developpement')
                 fin
                 l’impression du travail bien fait, ce qui fait de moi quelqu’un de très minutieux et perfectionniste.
             </p>
-            <p class="text-lg">Mon objectif est de devenir un développeur Front-End créatif et innovant, mettant
+            <p class="">Mon objectif est de devenir un développeur Front-End créatif et innovant, mettant
                 en œuvre
                 des solutions les
                 plus

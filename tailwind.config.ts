@@ -42,13 +42,14 @@ export default <Partial<Config>>{
             // '4xl': '2.441rem',
             '5xl': '3.25vw',
         },
-        extend: {
-            gridTemplateColumns: {
-                principal: 'repeat(12, minmax(0, 64px))'
-            }
-        }
+        screens: {
+            'xl': { 'max': '1439px' },
+            'lg': { 'max': '1023px' },
+            'md': { 'max': '767px' },
+            'sm': { 'max': '424px' },
+        },
+        extend: {}
 
     },
     plugins: [],
-    content: []
 }
