@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { supabase } from "@/supabase";
-import competenceTemplate from "~/components/competenceTemplate.vue";
-// console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
-const { data: Competences, error } = await supabase
-    .from('Competences')
+const { data: Competence, error } = await supabase
+    .from('Competence')
     .select('*')
 
 const currentComp = ref('Developpement')
@@ -76,10 +74,9 @@ const currentComp = ref('Developpement')
 
         <div class="border-solid border-2 border-t-0 border-bleu w-full p-4">
             <div class="flex gap-10">
-                <div v-for="competence in Competences" :key="competence.id">
+                <div v-for="competence in Competence" :key="competence.id">
                     <div v-if="currentComp === competence.type">
-                        <competenceTemplate :nom="competence.nom || ''" :lien="competence.lien || ''"
-                            :image="competence.image || ''" :image-alt="competence.imageAlt || ''" />
+                        <CompetencePreview v-bind="{ ...competence, id: competence.id.toString() }" />
                     </div>
                 </div>
                 <div v-if="error">{{ error.message }}</div>
