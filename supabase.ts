@@ -8,11 +8,24 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
 
 
-// Pour tester dans la console, dé-commenter la ligne qui suit :
-globalThis.supabase = supabase
+declare global {
+    var supabase: any; // Remplacez 'any' par le type réel de 'supabase' si vous le connaissez
+}
 
-const { data } = await supabase.auth.getUser()
-export const user = ref(data.user)
-supabase.auth.onAuthStateChange( (evt,session)=>{
-    user.value = session?.user ?? null
-})
+globalThis.supabase = supabase;
+
+
+let user = ref(); // Déclarez user en dehors de la fonction afin que son état persiste
+
+async function fetchUserData() {
+    const { data } = await supabase.auth.getUser();
+    user.value = data.user;
+}
+
+fetchUserData(); // Appelez la fonction pour récupérer les données de l'utilisateur au démarrage
+
+supabase.auth.onAuthStateChange((evt, session) => {
+    user.value = session?.user ?? null;
+});
+
+export { user }; // Exportez user si vous avez besoin d'y accéder depuis d'autres modules

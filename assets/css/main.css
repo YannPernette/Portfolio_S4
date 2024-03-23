@@ -16,7 +16,7 @@
         @apply text-blanc bg-sombre font-openSans;
         scroll-behavior: smooth;
         /* height: 100vh; */
-        /* overflow: hidden; */
+        overflow-x: hidden;
     }
 
 

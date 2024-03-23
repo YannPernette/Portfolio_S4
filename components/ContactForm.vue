@@ -1,3 +1,6 @@
+
+
+
 <template>
     <section>
 
@@ -266,30 +269,30 @@
             <div class="content">
                 <h2 class="font-urbanist font-medium">Me Contacter !</h2>
 
-                <div class="form flex flex-col gap-6">
+                <div action="" @submit.prevent="sendEmail" class="form flex flex-col gap-6">
                     <div class="flex gap-10">
                         <div class="inputBox block">
-                            <input type="text" required>
-                            <i>Nom</i>
+                            <input type="text" v-model="prenom" required />
+                            <i>Prénom</i>
                         </div>
                         <div class="inputBox">
-                            <input type="text" required>
-                            <i>Prénom</i>
+                            <input type="text" v-model="nom" required>
+                            <i>Nom</i>
                         </div>
                     </div>
 
                     <div class="inputBox">
-                        <input type="email" required>
+                        <input type="email" v-model="email" required>
                         <i>Email</i>
                     </div>
 
                     <div class="inputBox">
-                        <input type="text" required>
+                        <input type="text" v-model="objet" required>
                         <i>Objet du message</i>
                     </div>
 
                     <div class="inputBox">
-                        <input type="text" required>
+                        <textarea type="textarea" v-model="message" required></textarea>
                         <i>Message</i>
                     </div>
 

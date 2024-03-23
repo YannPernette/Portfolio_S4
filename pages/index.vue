@@ -112,14 +112,18 @@ const currentProjet = ref(0)
 
 
         <div class="relative overflow-hidden">
-                <div v-for="(projet, index) in Projet" :key="index">
-                    <ProjetHomePreview v-bind="{ ...projet, id: projet.id.toString() }" @mouseover="currentProjet = index" />
-                    <div v-if="currentProjet === index"
-                        class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
-                        <img :src="projet.image || ''" :alt="projet.imageAlt  || ''" class="rounded-lg">
-                    </div>
-                    <div v-if="error">{{ error.message }}</div>
+            <NuxtLink v-for="(projet, index) in Projet" :key="index" :to="{
+                    name: 'projets-id',
+                    params: { id: projet.id },
+                }">
+                <ProjetHomePreview v-bind="{ ...projet, id: projet.id.toString() }"
+                    @mouseover="currentProjet = index" />
+                <div v-if="currentProjet === index"
+                    class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
+                    <img :src="projet.image || ''" :alt="projet.imageAlt || ''" class="rounded-lg">
                 </div>
+                <div v-if="error">{{ error.message }}</div>
+            </NuxtLink>
         </div>
 
 
