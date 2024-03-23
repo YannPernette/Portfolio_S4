@@ -22,6 +22,9 @@ export default defineNuxtConfig({
         {
           src: "https://media.yann-pernette.fr/parallax-delta.js",
         },
+        {
+          src: "https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js",
+        },
       ],
     }
   }

@@ -1,6 +1,6 @@
 <template>
     <!-- <div class=""> -->
-    <CustomCursor />
+    <CustomCursor class="md:hidden" />
     <Header />
 
     <!-- Contenu de la page -->

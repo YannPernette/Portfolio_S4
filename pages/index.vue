@@ -10,8 +10,36 @@ const currentProjet = ref(0)
 </script>
 
 
+<script lang="ts">
+import TagCloud from 'tagcloud';
+
+export default {
+    mounted() {
+        if (process.client) {
+            const texts = [
+                'HTML', 'CSS', 'Javascript',
+                'Vue', 'Nuxt', 'NodeJS', 'Figma', 'Photoshop', 'Illustrator', 'After Effects', 'InDesign',
+                'Wordpress', 'PHP', 'Alpine', 'Pocketbase', 'Supabase', 'TailwindCSS', 'Github', 'Filmora', 'Davinci Resolve',
+            ];
+
+            TagCloud('.tagcloud', texts, {
+                radius: 250,
+                maxSpeed: 'normal',
+                initSpeed: 'fast',
+                direction: 135,
+                keep: true
+            });
+        }
+    },
+};
+</script>
+
+
+
 <template>
     <div class="">
+
+
 
         <!-- <div id='hero'>
             <div class='layer-bg layer' data-depth='0.00' data-type='parallax'>
@@ -78,11 +106,11 @@ const currentProjet = ref(0)
             <div class="flex items-center justify-center gap-20 hero">
                 <div class="flex justify-evenly items-center h-screen">
                     <div class="uppercase">
-                        <h1 class="font-orbitron font-medium text-[5rem] leading-tight">Yann</h1>
-                        <h1 class="font-orbitron font-medium text-[5rem]">Pernette</h1>
-                        <h2 class="normal-case font-electrolize text-[4rem]">Développeur Front-End</h2>
+                        <h1 class="font-orbitron font-medium text-[4rem] leading-[2.5rem]">Yann</h1>
+                        <h1 class="font-orbitron font-medium text-[4rem]">Pernette</h1>
+                        <h2 class="normal-case font-electrolize text-[3rem] mb-10">Développeur Front-End</h2>
                         <NuxtLink to="/projets">
-                            <BoutonLien text="Découvrir mon travail" />
+                            <BoutonLien class="w-fit" text="Découvrir mon travail" textColor="#000000" bgColor="#FFFFFF" />
                         </NuxtLink>
                     </div>
                 </div>
@@ -164,14 +192,28 @@ const currentProjet = ref(0)
         </div>
     </div> -->
 
-        <div class="text-center mt-10 mb-40">
+        <div class="text-center flex flex-col items-center mt-10">
             <h4 class="text-[2rem] mb-4">Vous en voulez encore ?</h4>
             <NuxtLink to="/projets">
-                <BoutonLien text="Découvrez mes 324 projets" />
+                <BoutonLien text="Découvrez tous mes projets" textColor="#FFFFFF" bgColor="#000000" />
             </NuxtLink>
         </div>
 
 
+        <div class="flex justify-between items-center mb-60 mx-[10%]">
+            <div class="tagcloud max-w-[0%] ml-[-20px]"></div>
+
+            <div class="flex flex-col items-center max-w-[50%] mt-40">
+                <h3 class="uppercase font-urbanist font-bold text-[2rem] leading-tight mb-5">Développeur Front-End...
+                    mais pas que !</h3>
+                <p class="mb-10">Durant ma formation, j'ai pu apprendre toutes sortes de compétences afin de devenir le
+                    plus
+                    polyvalent possible et comprendre directement les problématiques du web.</p>
+                <NuxtLink to="/projets">
+                    <BoutonLien text="En savoir plus sur moi" textColor="#FFFFFF" bgColor="#000000" />
+                </NuxtLink>
+            </div>
+        </div>
 
 
     </div>
