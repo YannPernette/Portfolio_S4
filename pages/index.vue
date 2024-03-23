@@ -6,7 +6,7 @@ const { data: Projet, error } = await supabase
     .eq('favori', true)
 
 const imagesProjet = Projet ? Projet.map(projet => projet.image) : []
-const currentProjet = ref(0)
+const currentProjet = ref(100)
 </script>
 
 
@@ -139,15 +139,15 @@ export default {
         </div>
 
 
-        <div class="relative overflow-hidden">
+        <div>
             <NuxtLink v-for="(projet, index) in Projet" :key="index" :to="{
                     name: 'projets-id',
                     params: { id: projet.id },
                 }">
                 <ProjetHomePreview v-bind="{ ...projet, id: projet.id.toString() }"
-                    @mouseover="currentProjet = index" />
+                    @mouseover="currentProjet = index" @mouseout="currentProjet = 100" />
                 <div v-if="currentProjet === index"
-                    class="items-center absolute z-10 top-1/2 transform -translate-y-1/2 right-[10%] w-[35%]">
+                    class="absolute z-50 w-[35%] hoverWindow">
                     <img :src="projet.image || ''" :alt="projet.imageAlt || ''" class="rounded-lg">
                 </div>
                 <div v-if="error">{{ error.message }}</div>
