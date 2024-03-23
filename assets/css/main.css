@@ -374,31 +374,37 @@
 
 /* SCROLL TEXTE EFFET (BANDEAU) */
 
-.scroll-container {
+.cursorProjet:hover .scrollContainer {
     overflow: hidden;
     width: 100%;
+    display: flex;
 }
 
-.cursorProjet:hover .scroll-text {
-    display: inline-block;
+.cursorProjet:hover .scrollText {
+    display: flex;
+    gap: 1.5rem;
     white-space: nowrap;
-    padding-left: 100%;
-    animation: scroll 5s linear infinite;
+    animation: scrollAccueil 15s linear infinite;
 }
 
-.scroll-container:hover .scroll-text {
+.scrollContainer .scrollText {
     animation-play-state: running;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
+.titleRoll::before {
+    content: "/";
+    padding-right: 1.5rem;
 }
+
+.displayScroll {
+    display: none;
+}
+
+.cursorProjet:hover .displayScroll {
+    display: block;
+}
+
+
 
 
 .shadowLogo:hover {

@@ -22,11 +22,19 @@ if (props.id !== undefined) {
 
 
 <template>
-    <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet onReveal">
+    <div class="p-4 border-solid border-2 border-bleu-medium rounded-sm hover-effect cursorProjet">
         <img class="border-solid border-2 border-bleu-medium mb-4 h-80 w-full" :src="prevprojets.image ?? ''" :alt="prevprojets.imageAlt ?? ''">
-        <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
+        <!-- <div class="scroll-container text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
             <div class="scroll-text uppercase font-medium text-2xl tracking-widest">
                 <h3>{{ prevprojets.nom }}</h3>
+            </div>
+        </div> -->
+        <div class="scrollContainer text-center border-solid border-2 border-bleu-medium bg-sombre py-2">
+            <div class="scrollText uppercase font-medium text-2xl tracking-widest">
+                <div v-for="item in 10" class="displayScroll">
+                    <h3 class="titleRoll">{{ prevprojets.nom }}</h3>
+                </div>
+                <h3 class="">{{ prevprojets.nom }}</h3>
             </div>
         </div>
     </div>
