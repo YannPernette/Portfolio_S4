@@ -2,7 +2,7 @@ section {
 	position: absolute;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	height: 150vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -48,8 +48,7 @@ section span:hover {
 
 section .signin {
 	position: absolute;
-	margin-top: 70px;
-	width: 500px;
+	width: 45rem;
 	background: #50505f;
 	z-index: 10;
 	display: flex;
@@ -64,15 +63,18 @@ section .signin .content {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	/* align-items: center; */
 	flex-direction: column;
 	gap: 40px;
 }
 
 section .signin .content h2 {
-	font-size: 2em;
+	font-size: 2.5rem;
 	color: #9ED0FF;
+	font-family: 'Urbanist', sans-serif;
+	font-weight: 700;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 section .signin .content .form .inputBox {
@@ -80,7 +82,8 @@ section .signin .content .form .inputBox {
 	width: 100%;
 }
 
-section .signin .content .form .inputBox input {
+section .signin .content .form .inputBox input, 
+section .signin .content .form .inputBox textarea {
 	position: relative;
 	width: 100%;
 	background: #333;
@@ -104,7 +107,9 @@ section .signin .content .form .inputBox i {
 }
 
 .signin .content .form .inputBox input:focus~i,
-.signin .content .form .inputBox input:valid~i {
+.signin .content .form .inputBox input:valid~i,
+.signin .content .form .inputBox textarea:focus~i,
+.signin .content .form .inputBox textarea:valid~i {
 	transform: translateY(-7.5px);
 	font-size: 0.8em;
 	color: #fff;
@@ -134,22 +139,36 @@ section .signin .content .form .inputBox i {
 	font-size: 1.35em;
 	letter-spacing: 0.05em;
 	cursor: pointer;
+	transition: color 0.3s, background-color 0.3s;
+}
+
+.signin .content .form .inputBox input[type="submit"]:hover {
+	background-color: #06041C;
+	color: #fff;
 }
 
 input[type="submit"]:active {
 	opacity: 0.6;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
 	section span {
 		width: calc(10vw - 2px);
 		height: calc(10vw - 2px);
 	}
+
+	section .signin {
+		width: 30rem;
+	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 424px) {
 	section span {
 		width: calc(20vw - 2px);
 		height: calc(20vw - 2px);
+	}
+
+	section .signin {
+		width: 20rem;
 	}
 }

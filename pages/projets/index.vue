@@ -8,7 +8,7 @@ const { data: Projet, error } = await supabase
 
 
 <template>
-    <div class="h-[35rem] pt-10">
+    <div class="h-[25rem] pt-10">
 
         <div class="grid grid-cols-2 overflow-hidden">
             <div class="splitGen transition-all duration-300 ease-in-out relative w-full hover:w-[120%] hover:z-10 z-0">
@@ -21,7 +21,7 @@ const { data: Projet, error } = await supabase
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
-                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
+                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[25rem]"
                     src="../../assets/img/fond_code.webp" alt="Fond code">
             </div>
 
@@ -36,14 +36,14 @@ const { data: Projet, error } = await supabase
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
-                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[35rem]"
+                <img class="brightness-50 blur-[1.5px] w-full hover:w-[120%] object-cover h-[25rem]"
                     src="../../assets/img/fond_design.webp" alt="Fond design">
             </div>
         </div>
     </div>
 
 
-    <div class="mt-20 mx-24 mb-40">
+    <div class="mt-28 mx-24 mb-40">
 
         <div class="grid grid-cols-2 grid-rows-2 gap-10">
             <NuxtLink v-for="projet in Projet" :key="projet.id" :to="{

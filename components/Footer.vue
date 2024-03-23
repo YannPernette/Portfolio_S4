@@ -1,7 +1,7 @@
 <template>
     <footer>
 
-        <div class="bg-blanc relative isolate">
+        <div class="bg-blanc relative isolate z-50">
 
             <h5
                 class="absolute opacity-80 font-orbitron top-[-65px] left-1/2 transform -translate-x-1/2 text-[5rem] md:text-[3rem] sm:text-[2rem] uppercase font-extrabold tracking-[5vw] mix-blend-difference">
