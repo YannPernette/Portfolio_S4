@@ -3,6 +3,8 @@ import { supabase } from "@/supabase";
 const { data: Projet, error } = await supabase
     .from('Projet')
     .select('*')
+
+const quelType = ref('site')
 </script>
 
 
@@ -15,9 +17,9 @@ const { data: Projet, error } = await supabase
                 <h2
                     class="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-urbanist font-black text-[3rem] uppercase leading-tight text-center">
                     Développement Web Front</h2>
-                <a href="">
+                <button @click="quelType = 'site'">
                     <div class="boutonSplit z-40">Voir mes projets de code</div>
-                </a>
+                </button>
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
@@ -30,9 +32,9 @@ const { data: Projet, error } = await supabase
                 <h2
                     class="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-urbanist font-black text-[3rem] uppercase leading-tight text-center">
                     Design Graphique</h2>
-                <a href="">
+                <button @click="quelType = 'design'">
                     <div class="boutonSplit z-40">Voir mes projets de design</div>
-                </a>
+                </button>
                 <div
                     class="absolute top-0 left-0 w-full h-full opacity-0 opacitySplit transition-opacity duration-300 bg-bleu z-10">
                 </div>
@@ -45,15 +47,30 @@ const { data: Projet, error } = await supabase
 
     <div class="mt-28 mx-24 mb-40">
 
-        <div class="grid grid-cols-2 grid-rows-2 gap-10">
-            <NuxtLink v-for="projet in Projet" :key="projet.id" :to="{
-                name: 'projets-id',
-                params: { id: projet.id },
-            }">
-                <ProjetPreview v-bind="{ ...projet, id: projet.id.toString() }" />
-                <div v-if="error">{{ error.message }}</div>
-            </NuxtLink>
+        <div class="grid grid-cols-2 gap-10 reverseGrid">
+            <div v-for="projet in Projet" :key="projet.id">
+                <NuxtLink :to="{
+                    name: 'projets-id',
+                    params: { id: projet.id },
+                }">
+                    <div v-if="projet.type === quelType">
+                        <ProjetPreview v-bind="{ ...projet, id: projet.id.toString() }" />
+                    </div>
+                    <div v-if="error">{{ error.message }}</div>
+                </NuxtLink>
+            </div>
         </div>
 
     </div>
 </template>
+
+
+<style scoped>
+.reverseGrid {
+  direction: rtl;
+}
+
+.reverseGrid > * {
+  direction: ltr;
+}
+</style>

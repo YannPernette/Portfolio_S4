@@ -43,26 +43,35 @@ export type Database = {
         Row: {
           created_at: string
           favori: boolean | null
+          genre: string | null
           id: number
           image: string | null
           imageAlt: string | null
           nom: string | null
+          resume: string | null
+          type: string | null
         }
         Insert: {
           created_at?: string
           favori?: boolean | null
+          genre?: string | null
           id?: number
           image?: string | null
           imageAlt?: string | null
           nom?: string | null
+          resume?: string | null
+          type?: string | null
         }
         Update: {
           created_at?: string
           favori?: boolean | null
+          genre?: string | null
           id?: number
           image?: string | null
           imageAlt?: string | null
           nom?: string | null
+          resume?: string | null
+          type?: string | null
         }
         Relationships: []
       }
