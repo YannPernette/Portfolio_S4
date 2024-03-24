@@ -4,7 +4,7 @@ const route = useRoute();
 
 
 <template>
-    <div class="py-80">
+    <div class="py-40">
         <ProjetPage :id="route.params.id.toString()" />
     </div>
 </template>
