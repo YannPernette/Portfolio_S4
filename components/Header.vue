@@ -7,7 +7,7 @@ const isMenuOpen = ref(false);
     <header>
 
         <div
-            class="navbarHeader navbarStyle hidden fixed w-full items-center justify-between z-[10000] py-3 px-10 text-[20px] uppercase tracking-wider font-electrolize font-medium">
+            class="navbarHeader navbarStyle hidden fixed w-full items-center justify-between z-[100] py-3 px-10 text-[20px] uppercase tracking-wider font-electrolize font-medium">
             <NuxtLink to="/">
                 <div v-if="isMenuOpen === false"
                     class="border-solid border-[3px] p-2 rounded-lg bg-sombre border-bleu-medium shadowLogo transition-shadow duration-300">
