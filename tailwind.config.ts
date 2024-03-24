@@ -33,8 +33,8 @@ export default <Partial<Config>>{
             urbanist: ['Urbanist', 'sans-serif'],
         },
         fontSize: {
-            // sm: '0.8rem',
-            // base: '1rem',
+            sm: '0.8rem',
+            base: '1rem',
             lg: '1.1rem',
             xl: '1.25rem',
             '2xl': '1.65vw',
