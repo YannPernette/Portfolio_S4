@@ -11,9 +11,9 @@ const quelType = ref('site')
 
 <template>
     <div class="bg-sombre">
-        <div class="h-[25rem] pt-10">
+        <div class="h-[25rem] md:h-fit pt-10">
 
-            <div class="grid grid-cols-2 overflow-hidden">
+            <div class="grid grid-cols-2 md:flex md:flex-col overflow-hidden">
                 <div
                     class="splitGen transition-all duration-300 ease-in-out relative w-full hover:w-[120%] hover:z-10 z-0">
                     <h2
@@ -49,7 +49,7 @@ const quelType = ref('site')
 
         <div class="mt-28 mx-24 mb-40">
 
-            <div class="grid grid-cols-2 gap-10 reverseGrid">
+            <div class="grid grid-cols-2 md:flex md:flex-col gap-10 reverseGrid">
                 <div v-for="projet in Projet" :key="projet.id">
                     <NuxtLink :to="{
                         name: 'projets-id',

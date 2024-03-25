@@ -17,15 +17,20 @@ const isMenuOpen = ref(false);
 
             <div class="uppercase md:hidden">
                 <ul class="flex gap-20">
-                    <NuxtLink to="/about"><li class="underlineAnimation">À propos</li></NuxtLink>
-                    <NuxtLink to="/projets"><li class="underlineAnimation">Projets</li></NuxtLink>
-                    <a href="https://media.yann-pernette.fr/CV_Yann_Pernette_Online.pdf" target="_blank"><li class="borderAnimation">Mon CV</li></a>
+                    <NuxtLink to="/about">
+                        <li class="underlineAnimation">À propos</li>
+                    </NuxtLink>
+                    <NuxtLink to="/projets">
+                        <li class="underlineAnimation">Projets</li>
+                    </NuxtLink>
+                    <a href="https://media.yann-pernette.fr/CV_Yann_Pernette_Online.pdf" target="_blank">
+                        <li class="borderAnimation">Mon CV</li>
+                    </a>
                 </ul>
             </div>
 
             <NuxtLink to="/contact">
-                <div
-                    class="boutonSendNav md:hidden items-center flex bg-blanc text-noir px-4 py-3 rounded-full">
+                <div class="boutonSendNav md:hidden items-center flex bg-blanc text-noir px-4 py-3 rounded-full">
                     <h5 class="">Me Contacter</h5>
                     <SendIcon class="visibleSendNav size-0 transition-all duration-300" />
                 </div>
@@ -33,11 +38,11 @@ const isMenuOpen = ref(false);
 
 
             <div class="hidden md:block" @click="isMenuOpen = !isMenuOpen">
-                <BoutonMenu />
+                <BoutonMenu class="mr-10 z-[100]" />
             </div>
         </div>
 
-        <div v-if="isMenuOpen" class="fixed z-[1000] w-screen h-screen bg-sombre">
+        <div v-if="isMenuOpen" v-scroll-lock="isMenuOpen" class="fixed z-[50] w-screen h-screen bg-sombre">
             <!-- <LogoIcon
                 class="fixed fill-blanc opacity-10 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 size-[70%]" /> -->
 
@@ -45,13 +50,8 @@ const isMenuOpen = ref(false);
                 <div id="menu" class="h-screen flex items-center text-[3rem] font-electrolize uppercase pl-20">
                     <ul id="menuItems" class="">
                         <li class="menuItem py-5">
-                            <NuxtLink to="/">
+                            <NuxtLink to="/about" @click="isMenuOpen = !isMenuOpen">
                                 <h4 class="">À Propos</h4>
-                            </NuxtLink>
-                        </li>
-                        <li class="menuItem py-5">
-                            <NuxtLink to="/">
-                                <h4 class="">Compétences</h4>
                             </NuxtLink>
                         </li>
                         <li class="menuItem py-5">
@@ -60,22 +60,23 @@ const isMenuOpen = ref(false);
                             </NuxtLink>
                         </li>
                         <li class="menuItem py-5">
-                            <NuxtLink to="/">
+                            <a href="https://media.yann-pernette.fr/CV_Yann_Pernette_Online.pdf" target="_blank">
                                 <h4 class="">Mon CV</h4>
-                            </NuxtLink>
+                            </a>
                         </li>
+
+                        <NuxtLink to="/contact" @click="isMenuOpen = !isMenuOpen">
+                            <div
+                                class="mt-10 boutonSendNav items-center flex bg-blanc text-noir px-4 py-3 rounded-full border-solid border-noir border-2">
+                                <h5 class="uppercase tracking-wider font-electrolize font-medium text-xl sm:text-lg">Me
+                                    Contacter</h5>
+                                <SendIcon class="visibleSendNav size-0 md:size-6 ml-4 transition-all duration-300" />
+                            </div>
+                        </NuxtLink>
                     </ul>
                     <div id="menuBackgroundPattern"></div>
                 </div>
             </nav>
-
-            <NuxtLink to="/contact">
-                <div
-                    class="z-40 boutonSend fixed items-center flex bottom-0 right-0 bg-blanc text-noir m-10 px-10 py-5 font-electrolize uppercase text-2xl rounded-full">
-                    <h5 class="">Me Contacter</h5>
-                    <SendIcon class="visibleSend size-0 transition-all duration-300" />
-                </div>
-            </NuxtLink>
         </div>
 
         <!-- <nav class="fixed z-50 py-10 flex gap-24 font-urbanist font-light uppercase text-lg">

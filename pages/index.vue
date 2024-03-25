@@ -104,7 +104,7 @@ export default {
 
         <div class="h-screen bg-blanc text-noir relative overflow-hidden parallaxTest pointer-events-none">
             <div class="flex items-center justify-center gap-20 hero">
-                <div class="flex justify-evenly items-center h-screen">
+                <div class="md:ml-10 flex justify-evenly items-center h-screen">
                     <div class="uppercase">
                         <h1 class="font-orbitron font-medium text-[4rem] leading-[2.5rem]">Yann</h1>
                         <h1 class="font-orbitron font-medium text-[4rem]">Pernette</h1>
@@ -115,7 +115,7 @@ export default {
                     </div>
                 </div>
 
-                <div class="z-[5] bg-[red] size-80"></div>
+                <div class="z-[5] bg-bleu-medium size-80"></div>
             </div>
 
             <div class="z-[2] composantPa">
@@ -200,10 +200,10 @@ export default {
         </div>
 
 
-        <div class="flex justify-between items-center mb-60 mx-[10%]">
-            <div class="tagcloud max-w-[0%] ml-[-20px]"></div>
+        <div class="flex md:flex-col justify-between md:justify-center items-center mb-60 mx-[10%]">
+            <div class="tagcloud max-w-[0%] md:max-w-full ml-[-20px] md:ml-[-200px]"></div>
 
-            <div class="flex flex-col items-center max-w-[50%] mt-40">
+            <div class="flex flex-col items-center max-w-[50%] md:max-w-full mt-40">
                 <h3 class="uppercase font-urbanist font-bold text-[2rem] leading-tight mb-5">Développeur Front-End...
                     mais pas que !</h3>
                 <p class="mb-10">Durant ma formation, j'ai pu apprendre toutes sortes de compétences afin de devenir le

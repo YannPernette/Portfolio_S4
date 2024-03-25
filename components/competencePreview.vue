@@ -24,7 +24,7 @@ if (props.id !== undefined) {
 <template>
     <a :href="prevcompetences.lien ?? ''" target="_blank">
         <div class="flex flex-col items-center competenceHover transition-all duration-500">
-            <img class="h-28 grayscale" :src="prevcompetences.image ?? ''" :alt="prevcompetences.imageAlt ?? ''">
+            <img class="h-28 grayscale md:grayscale-0" :src="prevcompetences.image ?? ''" :alt="prevcompetences.imageAlt ?? ''">
             <h5 class="text-[1.5rem]">{{ prevcompetences.nom }}</h5>
         </div>
     </a>

@@ -36,14 +36,14 @@ if (props.id !== undefined) {
     <div class="mx-[10%]">
 
 
-        <div class="flex items-center justify-between mb-20">
+        <div class="flex md:flex-col-reverse gap-10 items-center justify-between mb-20">
             <div>
                 <h1 class="uppercase font-semibold font-electrolize text-[3rem] tracking-widest leading-tight mb-3">{{
                     projet.nom }}</h1>
                 <p class="mb-10 text-xl"><span class="font-medium">Genre :</span> {{ projet.genre }}</p>
                 <p>{{ projet.resume }}</p>
             </div>
-            <img class="max-w-[50%] border-solid border-2 border-bleu-medium" :src="projet.image ?? ''"
+            <img class="max-w-[50%] md:max-w-full border-solid border-2 border-bleu-medium" :src="projet.image ?? ''"
                 :alt="projet.imageAlt ?? ''">
         </div>
 
@@ -53,7 +53,7 @@ if (props.id !== undefined) {
             <ul class="flex flex-wrap-reverse justify-center gap-10">
                 <li v-for="competence in projet.Competence" :key="competence.id">
                     <div class="flex flex-col items-center competenceHover transition-all duration-500">
-                        <img class="h-28 grayscale" :src="competence.image ?? ''"
+                        <img class="h-28 grayscale md:grayscale-0" :src="competence.image ?? ''"
                             :alt="competence.imageAlt ?? ''">
                         <h5 class="text-[1.5rem]">{{ competence.nom }}</h5>
                     </div>

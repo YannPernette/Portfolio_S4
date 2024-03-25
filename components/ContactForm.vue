@@ -315,7 +315,7 @@
                 </div>
 
                 <form action="" @submit.prevent="submitForm" class="form flex flex-col gap-6">
-                    <div class="flex gap-[20%]">
+                    <div class="flex md:flex-col gap-[20%] md:gap-6">
                         <div class="inputBox block">
                             <input type="text" name="prenom" v-model="prenom" required />
                             <i>Prénom</i>
