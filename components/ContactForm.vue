@@ -1,3 +1,42 @@
+<script>
+  const WEB3FORMS_ACCESS_KEY = "884ed38d-1a33-4671-b22d-dc291ce38c54";
+
+  export default {
+    data() {
+      return {
+        prenom: "",
+        nom: "",
+        email: "",
+        objet: "",
+        message: "",
+      };
+    },
+    methods: {
+      async submitForm() {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            prenom: this.prenom,
+            nom: this.nom,
+            email: this.email,
+            objet: this.objet,
+            message: this.message,
+          }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          console.log(result);
+          alert("Votre message a bien été envoyé !");
+        }
+      },
+    },
+  };
+  </script>
 
 
 
@@ -275,37 +314,37 @@
                 <p>Ou utilisez directement le formulaire ci-dessous :</p>
                 </div>
 
-                <div action="" @submit.prevent="sendEmail" class="form flex flex-col gap-6">
+                <form action="" @submit.prevent="submitForm" class="form flex flex-col gap-6">
                     <div class="flex gap-[20%]">
                         <div class="inputBox block">
-                            <input type="text" v-model="prenom" required />
+                            <input type="text" name="prenom" v-model="prenom" required />
                             <i>Prénom</i>
                         </div>
                         <div class="inputBox">
-                            <input type="text" v-model="nom" required>
+                            <input type="text" name="nom" v-model="nom" required>
                             <i>Nom</i>
                         </div>
                     </div>
 
                     <div class="inputBox">
-                        <input type="email" v-model="email" required>
+                        <input type="email" name="email"  v-model="email" required>
                         <i>Email</i>
                     </div>
 
                     <div class="inputBox">
-                        <input type="text" v-model="objet" required>
+                        <input type="text" name="objet" v-model="objet" required>
                         <i>Objet du message</i>
                     </div>
 
                     <div class="inputBox">
-                        <textarea type="textarea" rows="4" v-model="message" required></textarea>
+                        <textarea type="textarea" rows="4" name="message" v-model="message" required></textarea>
                         <i>Message</i>
                     </div>
 
                     <div class="inputBox">
                         <input type="submit" value="Envoyer">
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
